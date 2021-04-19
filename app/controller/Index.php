@@ -1,4 +1,5 @@
 <?php
+
 namespace app\controller;
 
 use support\Request;
@@ -29,5 +30,4 @@ class Index
         }
         return json(['code' => 1, 'msg' => 'file not found']);
     }
-    
 }
