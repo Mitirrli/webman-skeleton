@@ -1,0 +1,8 @@
+/.idea
+/.vscode
+/.docker/mysql
+/vendor
+*.log
+.env
+.history
+node_modules

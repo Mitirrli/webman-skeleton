@@ -1,0 +1,6 @@
+/vendor
+/runtime
+/node_modules
+
+.docker
+.git

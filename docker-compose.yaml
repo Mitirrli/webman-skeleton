@@ -1,0 +1,33 @@
+version: "3.7"
+
+services:
+    webman-skeleton:
+        container_name: webman-skeleton
+        build:
+            context: .docker/php
+            dockerfile: Dockerfile
+        tty: true
+        ports:
+            - "8786:8787"
+        volumes:
+            - ./:/www
+        restart: always
+
+    webman-skeleton-redis:
+        container_name: webman-skeleton-redis
+        image: redis
+        ports:
+            - "6899:6379"
+        restart: always
+            
+    webman-skeleton-mysql:
+        container_name: webman-skeleton-mysql
+        image: mysql
+        command: --default-authentication-plugin=mysql_native_password
+        environment:
+            MYSQL_ROOT_PASSWORD: root
+        volumes:
+            - .docker/mysql:/var/lib/mysql
+        ports:
+            - "3319:3306"
+        restart: always

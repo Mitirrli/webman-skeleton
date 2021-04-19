@@ -1,0 +1,29 @@
+{
+  "name": "webman-skeleton-source-code",
+  "version": "1.0.0",
+  "description": "High performance HTTP Service Framework for PHP based on [Workerman](https://github.com/walkor/workerman).",
+  "main": ".cz-config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/walkor/webman.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/walkor/webman/issues"
+  },
+  "homepage": "https://github.com/walkor/webman#readme",
+  "devDependencies": {
+    "cz-conventional-changelog": "^3.3.0",
+    "cz-customizable": "^6.3.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-customizable"
+    }
+  }
+}
