@@ -25,7 +25,7 @@ $config = config('server');
 
 $applicationAspectKernel = ApplicationAspectKernel::getInstance();
 $applicationAspectKernel->init([
-        'debug'        => true, // use 'false' for production mode
+        'debug'        => filter_var(config('app.debug'), FILTER_VALIDATE_BOOLEAN), // use 'false' for production mode
         'appDir'       => __DIR__ . '/app', // Application root directory
         'cacheDir'     => __DIR__ . '/runtime/aop', // Cache directory
         // Include paths restricts the directories where aspects should be applied, or empty for all source files
