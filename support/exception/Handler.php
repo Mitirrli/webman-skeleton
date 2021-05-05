@@ -13,6 +13,7 @@
  */
 namespace support\exception;
 
+use Respect\Validation\Exceptions\ValidationException;
 use Webman\Http\Request;
 use Webman\Http\Response;
 use Throwable;
@@ -35,6 +36,10 @@ class Handler extends ExceptionHandler
 
     public function render(Request $request, Throwable $exception) : Response
     {
+        if ($exception instanceof ValidationException) {
+            return new Response(422, ['Content-Type' => 'application/json'], json_encode(['code' => 0, 'msg' => $exception->getMessage()], JSON_UNESCAPED_UNICODE));
+        }
+
         return parent::render($request, $exception);
     }
 
