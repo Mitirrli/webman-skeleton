@@ -1,6 +1,7 @@
 <?php
 require_once __DIR__ . '/vendor/autoload.php';
 
+use app\ApplicationAspectKernel;
 use Workerman\Worker;
 use Workerman\Protocols\Http;
 use Workerman\Connection\TcpConnection;
@@ -21,6 +22,17 @@ if (method_exists('Dotenv\Dotenv', 'createUnsafeImmutable')) {
 
 Config::load(config_path(), ['route', 'container']);
 $config = config('server');
+
+$applicationAspectKernel = ApplicationAspectKernel::getInstance();
+$applicationAspectKernel->init([
+        'debug'        => true, // use 'false' for production mode
+        'appDir'       => __DIR__ . '/app', // Application root directory
+        'cacheDir'     => __DIR__ . '/runtime/aop', // Cache directory
+        // Include paths restricts the directories where aspects should be applied, or empty for all source files
+        'includePaths' => [
+            __DIR__ . '/app/'
+        ]
+]);
 
 if ($timezone = config('app.default_timezone')) {
     date_default_timezone_set($timezone);

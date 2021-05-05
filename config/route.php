@@ -20,3 +20,5 @@ Route::any('/test', function ($request) {
 });
 
 Route::any('/route-test', 'app\controller\Index@index');
+
+Route::any('/view', 'app\controller\Index@view');
