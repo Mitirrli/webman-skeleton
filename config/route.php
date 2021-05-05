@@ -12,6 +12,7 @@
  * @license   http://www.opensource.org/licenses/mit-license.php MIT License
  */
 
+use app\controller\Index;
 use Webman\Route;
 
 
@@ -19,6 +20,6 @@ Route::any('/test', function ($request) {
     return response('test');
 });
 
-Route::any('/route-test', 'app\controller\Index@index');
+Route::any('/route-test', [Index::class, 'index']);
 
-Route::any('/view', 'app\controller\Index@view');
+Route::any('/view', [Index::class, 'view']);

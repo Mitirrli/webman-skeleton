@@ -24,7 +24,6 @@ class MonitorAspect implements Aspect
      */
     public function beforeMethodExecution(MethodInvocation $invocation)
     {
-        //做指定操作
         echo 'Calling Before Interceptor for: ',
         $invocation,
         ' with arguments: ',
