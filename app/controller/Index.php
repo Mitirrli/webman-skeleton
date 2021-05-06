@@ -2,7 +2,7 @@
 
 namespace app\controller;
 
-use app\service\JwtInterface;
+use app\interfaces\JwtInterface;
 use support\Request;
 use support\bootstrap\Container;
 

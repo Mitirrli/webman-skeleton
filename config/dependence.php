@@ -12,11 +12,10 @@
  * @license   http://www.opensource.org/licenses/mit-license.php MIT License
  */
 
-use app\service\JwtService;
 use Psr\Container\ContainerInterface;
 
 return [
-    app\service\JwtInterface::class => function (ContainerInterface $container) {
-        return $container->make(JwtService::class);
+    app\interfaces\JwtInterface::class => function (ContainerInterface $container) {
+        return $container->make(app\service\JwtService::class);
     }
 ];
