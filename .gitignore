@@ -7,3 +7,5 @@
 .history
 .phpunit.result.cache
 node_modules
+cghooks.lock
+

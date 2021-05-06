@@ -15,7 +15,6 @@ use Go\Lang\Annotation\Pointcut;
  */
 class MonitorAspect implements Aspect
 {
-
     /**
      * Method that will be called before real method
      *

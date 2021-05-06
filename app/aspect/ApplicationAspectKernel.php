@@ -1,6 +1,6 @@
 <?php
 
-namespace app;
+namespace app\aspect;
 
 use app\aspect\MonitorAspect;
 use Go\Core\AspectKernel;
@@ -11,7 +11,6 @@ use Go\Core\AspectContainer;
  */
 class ApplicationAspectKernel extends AspectKernel
 {
-
     /**
      * Configure an AspectContainer with advisors, aspects and pointcuts
      *
@@ -21,6 +20,6 @@ class ApplicationAspectKernel extends AspectKernel
      */
     protected function configureAop(AspectContainer $container)
     {
-        $container->registerAspect(new MonitorAspect);
+        $container->registerAspect(new MonitorAspect());
     }
 }

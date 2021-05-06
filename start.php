@@ -1,7 +1,7 @@
 <?php
 require_once __DIR__ . '/vendor/autoload.php';
 
-use app\ApplicationAspectKernel;
+use app\aspect\ApplicationAspectKernel;
 use Workerman\Worker;
 use Workerman\Protocols\Http;
 use Workerman\Connection\TcpConnection;
