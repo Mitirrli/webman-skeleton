@@ -2,13 +2,21 @@
 
 namespace app\controller;
 
+use app\service\JwtInterface;
 use support\Request;
+use support\bootstrap\Container;
 
 class Index
 {
     public function index(Request $request)
     {
-        return response('hello webman');
+        // $result = Container::get(JwtInterface::class)->generate(1, ['data' => 'test', 'remark' => 'doc']);
+
+        // $token = 'eeyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1aWQiOjEsImRhdGEiOjAsInJlbWFyayI6MCwidGltZSI6MTYyMDI3ODExMCwiZXhwIjoxNjIwMjc5OTEwfQ.GmP55IHRT1U-L69NDg7COWZ5ExVzFbpYzeTHLvSbzYU';
+
+        // $result = Container::get(JwtInterface::class)->verify($token);
+
+        // return response($result);
     }
 
     public function view(Request $request)

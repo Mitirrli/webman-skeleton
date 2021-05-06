@@ -15,4 +15,5 @@
 return [
     'debug' => env('APP_DEBUG', false),
     'default_timezone' => 'Asia/Shanghai',
+    'jwt_key' => env('JWT_KEY', '1234567890')
 ];

@@ -12,6 +12,11 @@
  * @license   http://www.opensource.org/licenses/mit-license.php MIT License
  */
 
-return [
+use app\service\JwtService;
+use Psr\Container\ContainerInterface;
 
+return [
+    app\service\JwtInterface::class => function (ContainerInterface $container) {
+        return $container->make(JwtService::class);
+    }
 ];
